@@ -1,0 +1,169 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  /* NEOCS brand tokens — earth, harvest, growth. No navy, no gold-fintech gradient. */
+  --color-soil: var(--soil);
+  --color-soil-deep: var(--soil-deep);
+  --color-growth: var(--growth);
+  --color-growth-bright: var(--growth-bright);
+  --color-harvest: var(--harvest);
+  --color-harvest-soft: var(--harvest-soft);
+  --color-paper: var(--paper);
+  --color-paper-dim: var(--paper-dim);
+  --color-ink: var(--ink);
+
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.6rem;
+
+  /* Earth / harvest palette */
+  --soil-deep: oklch(0.15 0.025 90);
+  --soil: oklch(0.2 0.028 95);
+  --growth: oklch(0.42 0.1 152);
+  --growth-bright: oklch(0.64 0.15 152);
+  --harvest: oklch(0.72 0.15 70);
+  --harvest-soft: oklch(0.87 0.09 85);
+  --ink: oklch(0.19 0.018 90);
+  --paper: oklch(0.975 0.008 85);
+  --paper-dim: oklch(0.94 0.014 80);
+
+  --background: oklch(0.975 0.008 85);
+  --foreground: var(--ink);
+  --card: oklch(0.99 0.005 85);
+  --card-foreground: var(--ink);
+  --popover: oklch(0.99 0.005 85);
+  --popover-foreground: var(--ink);
+  --primary: var(--growth);
+  --primary-foreground: oklch(0.98 0.008 120);
+  --secondary: oklch(0.93 0.016 80);
+  --secondary-foreground: var(--ink);
+  --muted: oklch(0.94 0.013 80);
+  --muted-foreground: oklch(0.42 0.02 90);
+  --accent: oklch(0.9 0.045 90);
+  --accent-foreground: var(--soil-deep);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.86 0.016 80);
+  --input: oklch(0.86 0.016 80);
+  --ring: var(--growth-bright);
+
+  --gradient-earth: linear-gradient(160deg, var(--soil-deep) 0%, oklch(0.22 0.05 145) 55%, var(--growth) 130%);
+  --gradient-harvest: linear-gradient(100deg, var(--harvest-soft), var(--harvest));
+  --shadow-lift: 0 24px 60px -28px oklch(0.2 0.03 95 / 0.28);
+  --shadow-glow: 0 0 80px -20px oklch(0.64 0.15 152 / 0.4);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: oklch(0.64 0.15 152 / 0.22);
+  }
+
+  h1, h2, h3 {
+    letter-spacing: -0.03em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@utility surface-soil {
+  background: var(--gradient-earth);
+  color: oklch(0.97 0.01 100);
+}
+
+@utility text-harvest-gradient {
+  background: var(--gradient-harvest);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility glass-panel {
+  background: oklch(1 0 0 / 0.05);
+  border: 1px solid oklch(1 0 0 / 0.1);
+  backdrop-filter: blur(18px);
+}
+
+@utility grain {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    background-image: radial-gradient(oklch(1 0 0 / 0.05) 1px, transparent 1px);
+    background-size: 3px 3px;
+  }
+}
+
+@utility grain-warm {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.5;
+    background-image: radial-gradient(oklch(0.2 0.03 95 / 0.045) 1px, transparent 1px);
+    background-size: 3px 3px;
+  }
+}
+
+@utility rule-line {
+  background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+  height: 1px;
+}
