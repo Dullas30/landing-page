@@ -33,14 +33,18 @@ export function Nav() {
       <div
         className={cn(
           "mx-auto flex max-w-7xl items-center gap-4 px-5 transition-all duration-500 sm:px-8",
-          scrolled ? "my-3 rounded-2xl border border-border bg-paper/90 py-3 shadow-sm backdrop-blur-xl" : "my-4 py-3",
+          scrolled
+            ? "my-3 rounded-2xl border border-border bg-paper/90 py-3 shadow-sm backdrop-blur-xl"
+            : "my-4 py-3",
         )}
       >
         <a href="#top" className="flex min-w-0 items-center gap-3">
-          <BrandLogo className="h-9 w-auto shrink-0 rounded-md object-contain" />
+          <BrandLogo className="h-7 max-w-[6rem] shrink-0 rounded-md" />
           <span className="truncate text-sm font-extrabold tracking-tight text-ink">
             NEOCS
-            <span className="ml-2 hidden font-medium text-ink/50 sm:inline">Cooperative Society</span>
+            <span className="ml-2 hidden font-medium text-ink/50 sm:inline">
+              Cooperative Society
+            </span>
           </span>
         </a>
 
@@ -72,8 +76,18 @@ export function Nav() {
         >
           <span className="sr-only">Menu</span>
           <div className="space-y-1.5">
-            <span className={cn("block h-px w-4 bg-current transition", open && "translate-y-[3px] rotate-45")} />
-            <span className={cn("block h-px w-4 bg-current transition", open && "-translate-y-[3px] -rotate-45")} />
+            <span
+              className={cn(
+                "block h-px w-4 bg-current transition",
+                open && "translate-y-[3px] rotate-45",
+              )}
+            />
+            <span
+              className={cn(
+                "block h-px w-4 bg-current transition",
+                open && "-translate-y-[3px] -rotate-45",
+              )}
+            />
           </div>
         </button>
       </div>

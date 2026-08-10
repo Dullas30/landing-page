@@ -88,8 +88,8 @@ export function Ecosystem() {
         </Reveal>
         <Reveal delay={2}>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-soil-deep/78">
-            Each part of NEOCS feeds the next: savings become capital, capital becomes assets, assets become
-            income, and reporting keeps all of it in plain view.
+            Each part of NEOCS feeds the next: savings become capital, capital becomes assets,
+            assets become income, and reporting keeps all of it in plain view.
           </p>
         </Reveal>
 
@@ -120,7 +120,9 @@ export function Ecosystem() {
                       <Icon className="h-4 w-4" aria-hidden />
                     </span>
                     <span className="min-w-0">
-                      <span className="block whitespace-nowrap text-sm font-bold lg:whitespace-normal">{m.name}</span>
+                      <span className="block whitespace-nowrap text-sm font-bold lg:whitespace-normal">
+                        {m.name}
+                      </span>
                       <span className="hidden text-xs text-soil-deep/46 lg:block">{m.tag}</span>
                     </span>
                   </button>
@@ -138,12 +140,21 @@ export function Ecosystem() {
                 exit={{ opacity: 0, y: -12 }}
                 transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
               >
-                <p className="text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-growth">{current.tag}</p>
-                <h3 className="mt-4 text-3xl font-extrabold text-soil-deep sm:text-4xl">{current.name}</h3>
-                <p className="mt-5 max-w-lg text-base leading-relaxed text-soil-deep/76">{current.body}</p>
+                <p className="text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-growth">
+                  {current.tag}
+                </p>
+                <h3 className="mt-4 text-3xl font-extrabold text-soil-deep sm:text-4xl">
+                  {current.name}
+                </h3>
+                <p className="mt-5 max-w-lg text-base leading-relaxed text-soil-deep/76">
+                  {current.body}
+                </p>
                 <ul className="mt-8 grid gap-3 sm:grid-cols-3">
                   {current.points.map((p) => (
-                    <li key={p} className="rounded-xl border border-white/30 bg-white/56 px-4 py-3 text-xs font-medium text-soil-deep/72">
+                    <li
+                      key={p}
+                      className="rounded-xl border border-white/30 bg-white/56 px-4 py-3 text-xs font-medium text-soil-deep/72"
+                    >
                       {p}
                     </li>
                   ))}

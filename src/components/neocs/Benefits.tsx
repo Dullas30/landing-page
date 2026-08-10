@@ -1,16 +1,46 @@
 import { motion } from "motion/react";
 import {
-  Coins, Wrench, Users2, Building2, Infinity as InfinityIcon,
-  Sprout, Briefcase, GraduationCap, Store, HandCoins, Landmark, Factory,
+  Coins,
+  Wrench,
+  Users2,
+  Building2,
+  Infinity as InfinityIcon,
+  Sprout,
+  Briefcase,
+  GraduationCap,
+  Store,
+  HandCoins,
+  Landmark,
+  Factory,
 } from "lucide-react";
 import { Reveal, SectionLabel, Counter } from "./primitives";
 
 const benefits = [
-  { icon: Coins, title: "Financial", body: "Dividend income, growth in the value of your units, patronage rewards and steadily compounding savings." },
-  { icon: Wrench, title: "Business", body: "Access to equipment, affordable financing, enterprise development support and new market opportunities." },
-  { icon: Users2, title: "Community", body: "Cooperative welfare support, training and capacity building, and development programmes where members live." },
-  { icon: Building2, title: "Enterprise", body: "Shared equipment hubs and productive infrastructure that let small operators compete for bigger work." },
-  { icon: InfinityIcon, title: "Long term ownership", body: "A stake that can grow with the cooperative and be passed on, ownership that outlives a single season." },
+  {
+    icon: Coins,
+    title: "Financial",
+    body: "Dividend income, growth in the value of your units, patronage rewards and steadily compounding savings.",
+  },
+  {
+    icon: Wrench,
+    title: "Business",
+    body: "Access to equipment, affordable financing, enterprise development support and new market opportunities.",
+  },
+  {
+    icon: Users2,
+    title: "Community",
+    body: "Cooperative welfare support, training and capacity building, and development programmes where members live.",
+  },
+  {
+    icon: Building2,
+    title: "Enterprise",
+    body: "Shared equipment hubs and productive infrastructure that let small operators compete for bigger work.",
+  },
+  {
+    icon: InfinityIcon,
+    title: "Long term ownership",
+    body: "A stake that can grow with the cooperative and be passed on, ownership that outlives a single season.",
+  },
 ];
 
 const audiences = [
@@ -46,7 +76,9 @@ export function Benefits() {
                   <Coins className="h-5 w-5" aria-hidden />
                 </span>
                 <h3 className="mt-7 text-xl font-bold">Financial</h3>
-                <p className="mt-3 max-w-sm text-sm leading-relaxed text-paper/70">{benefits[0]!.body}</p>
+                <p className="mt-3 max-w-sm text-sm leading-relaxed text-paper/70">
+                  {benefits[0]!.body}
+                </p>
               </div>
               <p className="mt-10 font-display text-4xl font-bold text-harvest-soft">
                 <Counter value={60} suffix="%" /> to dividends
@@ -101,10 +133,17 @@ export function Benefits() {
                     as="li"
                     key={a.label}
                     delay={i * 0.5}
-                    className={large ? "basis-full sm:basis-[calc(50%-0.375rem)]" : "basis-[calc(50%-0.375rem)] sm:basis-[calc(33%-0.5rem)]"}
+                    className={
+                      large
+                        ? "basis-full sm:basis-[calc(50%-0.375rem)]"
+                        : "basis-[calc(50%-0.375rem)] sm:basis-[calc(33%-0.5rem)]"
+                    }
                   >
                     <div className="group flex h-full items-start gap-3 rounded-2xl border border-border bg-card p-5 transition-colors hover:bg-secondary">
-                      <Icon className="mt-0.5 h-4.5 w-4.5 shrink-0 text-growth transition-transform duration-300 group-hover:scale-110" aria-hidden />
+                      <Icon
+                        className="mt-0.5 h-4.5 w-4.5 shrink-0 text-growth transition-transform duration-300 group-hover:scale-110"
+                        aria-hidden
+                      />
                       <div>
                         <h3 className="text-sm font-bold leading-snug">{a.label}</h3>
                         <p className="mt-1 text-xs text-muted-foreground">{a.note}</p>

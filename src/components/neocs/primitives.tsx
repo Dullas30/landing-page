@@ -37,7 +37,13 @@ export function Reveal({
   );
 }
 
-export function SectionLabel({ children, tone = "dark" }: { children: ReactNode; tone?: "dark" | "light" }) {
+export function SectionLabel({
+  children,
+  tone = "dark",
+}: {
+  children: ReactNode;
+  tone?: "dark" | "light";
+}) {
   return (
     <span
       className={cn(
@@ -75,11 +81,20 @@ export function Counter({
       spring.on("change", (v) => {
         if (ref.current) {
           ref.current.textContent =
-            prefix + v.toLocaleString("en-NG", { maximumFractionDigits: decimals, minimumFractionDigits: decimals }) + suffix;
+            prefix +
+            v.toLocaleString("en-NG", {
+              maximumFractionDigits: decimals,
+              minimumFractionDigits: decimals,
+            }) +
+            suffix;
         }
       }),
     [spring, prefix, suffix, decimals],
   );
 
-  return <span ref={ref}>{prefix}0{suffix}</span>;
+  return (
+    <span ref={ref}>
+      {prefix}0{suffix}
+    </span>
+  );
 }

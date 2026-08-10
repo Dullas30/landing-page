@@ -27,8 +27,9 @@ export function FinalCta() {
         </Reveal>
         <Reveal delay={2}>
           <p className="mx-auto mt-8 max-w-xl text-base leading-relaxed text-soil-deep/76 sm:text-lg">
-            NEOCS is not a place to park money. It is a movement to place productive assets in the hands of the
-            Nigerians who will put them to work, and to keep the value where it is created.
+            NEOCS is not a place to park money. It is a movement to place productive assets in the
+            hands of the Nigerians who will put them to work, and to keep the value where it is
+            created.
           </p>
         </Reveal>
         <Reveal delay={3}>
@@ -38,7 +39,10 @@ export function FinalCta() {
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-soil-deep px-8 py-4 text-sm font-bold text-paper transition-transform duration-300 hover:scale-[1.03]"
             >
               Become a Member
-              <span className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden>
+              <span
+                className="transition-transform duration-300 group-hover:translate-x-1"
+                aria-hidden
+              >
                 →
               </span>
             </a>
@@ -52,7 +56,8 @@ export function FinalCta() {
         </Reveal>
         <Reveal delay={4}>
           <p className="mt-8 text-xs text-soil-deep/52">
-            Membership opens with identity verification. Registration and annual subscription apply by category.
+            Membership opens with identity verification. Registration and annual subscription apply
+            by category.
           </p>
         </Reveal>
       </div>

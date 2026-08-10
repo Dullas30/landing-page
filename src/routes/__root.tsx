@@ -74,10 +74,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "NEOCS: Own Nigeria" },
-      { name: "description", content: "Nigeria Equipment Ownership Cooperative Society, a national cooperative for collective ownership of productive assets." },
+      {
+        name: "description",
+        content:
+          "Nigeria Equipment Ownership Cooperative Society, a national cooperative for collective ownership of productive assets.",
+      },
       { name: "author", content: "NEOCS" },
       { property: "og:title", content: "NEOCS: Own Nigeria" },
-      { property: "og:description", content: "Nigeria Equipment Ownership Cooperative Society, a national cooperative for collective ownership of productive assets." },
+      {
+        property: "og:description",
+        content:
+          "Nigeria Equipment Ownership Cooperative Society, a national cooperative for collective ownership of productive assets.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

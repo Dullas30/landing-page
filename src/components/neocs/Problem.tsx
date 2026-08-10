@@ -49,8 +49,8 @@ export function Problem() {
             </Reveal>
             <Reveal delay={2}>
               <p className="mt-7 max-w-md text-base leading-relaxed text-muted-foreground">
-                Nigeria's growth bottleneck is not ambition or ability. It is access to the productive assets
-                that turn enterprise into output, and output into lasting wealth.
+                Nigeria's growth bottleneck is not ambition or ability. It is access to the
+                productive assets that turn enterprise into output, and output into lasting wealth.
               </p>
             </Reveal>
           </div>

@@ -14,35 +14,96 @@ function MachineryMark() {
   return (
     <svg viewBox="0 0 420 420" fill="none" className="h-full w-full" aria-hidden>
       <motion.circle
-        cx="210" cy="210" r="168"
-        stroke="var(--color-growth)" strokeOpacity="0.18" strokeWidth="1"
-        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 2.2, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
+        cx="210"
+        cy="210"
+        r="168"
+        stroke="var(--color-growth)"
+        strokeOpacity="0.18"
+        strokeWidth="1"
+        initial={{ pathLength: 0 }}
+        animate={{ pathLength: 1 }}
+        transition={{ duration: 2.2, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
       />
       {/* tractor */}
-      <motion.g initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1 }}>
+      <motion.g
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 1 }}
+      >
         <circle cx="120" cy="268" r="26" stroke="var(--color-soil)" strokeWidth="4" />
         <circle cx="222" cy="278" r="17" stroke="var(--color-soil)" strokeWidth="4" />
-        <path d="M96 244 L96 214 L146 214 L168 244 L228 244" stroke="var(--color-soil)" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M146 214 L146 186 L172 186" stroke="var(--color-soil)" strokeWidth="4" strokeLinecap="round" />
+        <path
+          d="M96 244 L96 214 L146 214 L168 244 L228 244"
+          stroke="var(--color-soil)"
+          strokeWidth="4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M146 214 L146 186 L172 186"
+          stroke="var(--color-soil)"
+          strokeWidth="4"
+          strokeLinecap="round"
+        />
       </motion.g>
       {/* solar array */}
-      <motion.g initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1.15 }}>
-        <path d="M258 150 L340 150 L326 196 L244 196 Z" stroke="var(--color-growth)" strokeWidth="4" strokeLinejoin="round" />
-        <path d="M267 150 L263 196 M299 150 L292 196 M331 150 L322 196" stroke="var(--color-growth)" strokeWidth="2" />
-        <path d="M299 196 L299 230" stroke="var(--color-growth)" strokeWidth="4" strokeLinecap="round" />
+      <motion.g
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 1.15 }}
+      >
+        <path
+          d="M258 150 L340 150 L326 196 L244 196 Z"
+          stroke="var(--color-growth)"
+          strokeWidth="4"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M267 150 L263 196 M299 150 L292 196 M331 150 L322 196"
+          stroke="var(--color-growth)"
+          strokeWidth="2"
+        />
+        <path
+          d="M299 196 L299 230"
+          stroke="var(--color-growth)"
+          strokeWidth="4"
+          strokeLinecap="round"
+        />
       </motion.g>
       {/* delivery truck */}
-      <motion.g initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1.3 }}>
-        <rect x="86" y="120" width="70" height="46" rx="3" stroke="var(--color-harvest)" strokeWidth="4" />
-        <path d="M156 140 L188 140 L204 158 L204 166 L156 166 Z" stroke="var(--color-harvest)" strokeWidth="4" strokeLinejoin="round" />
+      <motion.g
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 1.3 }}
+      >
+        <rect
+          x="86"
+          y="120"
+          width="70"
+          height="46"
+          rx="3"
+          stroke="var(--color-harvest)"
+          strokeWidth="4"
+        />
+        <path
+          d="M156 140 L188 140 L204 158 L204 166 L156 166 Z"
+          stroke="var(--color-harvest)"
+          strokeWidth="4"
+          strokeLinejoin="round"
+        />
         <circle cx="112" cy="170" r="11" stroke="var(--color-harvest)" strokeWidth="4" />
         <circle cx="182" cy="170" r="11" stroke="var(--color-harvest)" strokeWidth="4" />
       </motion.g>
       {/* connecting stitches connecting capital to assets */}
       <motion.path
         d="M146 186 C 190 150, 230 150, 258 172 M172 186 C 170 220, 200 250, 222 261"
-        stroke="var(--color-harvest)" strokeWidth="1.5" strokeDasharray="3 5" strokeLinecap="round"
-        initial={{ pathLength: 0, opacity: 0 }} animate={{ pathLength: 1, opacity: 0.7 }} transition={{ duration: 1.6, delay: 1.6, ease: "easeInOut" }}
+        stroke="var(--color-harvest)"
+        strokeWidth="1.5"
+        strokeDasharray="3 5"
+        strokeLinecap="round"
+        initial={{ pathLength: 0, opacity: 0 }}
+        animate={{ pathLength: 1, opacity: 0.7 }}
+        transition={{ duration: 1.6, delay: 1.6, ease: "easeInOut" }}
       />
       {Array.from({ length: 10 }).map((_, i) => {
         const angle = (i / 10) * Math.PI * 2;
@@ -52,11 +113,18 @@ function MachineryMark() {
         return (
           <motion.circle
             key={i}
-            cx={cx} cy={cy} r={i % 3 === 0 ? 3.5 : 2.2}
+            cx={cx}
+            cy={cy}
+            r={i % 3 === 0 ? 3.5 : 2.2}
             fill={i % 2 === 0 ? "var(--color-growth-bright)" : "var(--color-harvest)"}
             initial={{ opacity: 0 }}
             animate={{ opacity: [0.3, 0.9, 0.3] }}
-            transition={{ duration: 3.5, repeat: Infinity, delay: 1.8 + i * 0.15, ease: "easeInOut" }}
+            transition={{
+              duration: 3.5,
+              repeat: Infinity,
+              delay: 1.8 + i * 0.15,
+              ease: "easeInOut",
+            }}
           />
         );
       })}
@@ -85,7 +153,10 @@ export function Hero() {
         className="pointer-events-none absolute -left-40 bottom-0 h-[28rem] w-[28rem] rounded-full bg-growth/10 blur-[130px]"
       />
 
-      <motion.div style={{ opacity: fade }} className="mx-auto grid w-full max-w-7xl gap-12 px-5 lg:grid-cols-[1.12fr_0.88fr] lg:items-center lg:gap-10 sm:px-8">
+      <motion.div
+        style={{ opacity: fade }}
+        className="mx-auto grid w-full max-w-7xl gap-12 px-5 lg:grid-cols-[1.12fr_0.88fr] lg:items-center lg:gap-10 sm:px-8"
+      >
         <div className="space-y-8 lg:pr-6">
           <motion.p
             initial={{ opacity: 0, y: 14 }}
@@ -125,11 +196,11 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 1.15 }}
             className="flex items-start gap-3 pt-1 sm:items-center"
           >
-            <BrandLogo className="h-9 w-auto shrink-0 rounded-md object-contain" />
+            <BrandLogo className="h-7 max-w-[6rem] shrink-0 rounded-md" />
             <p className="max-w-xl text-sm leading-relaxed text-foreground sm:text-base">
               This is <span className="font-bold">NEOCS</span>, the Nigeria Equipment Ownership
-              Cooperative Society. Members pool capital, the cooperative buys the machinery, everyone
-              shares what it earns.
+              Cooperative Society. Members pool capital, the cooperative buys the machinery,
+              everyone shares what it earns.
             </p>
           </motion.div>
 
@@ -144,7 +215,10 @@ export function Hero() {
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-soil px-7 py-4 text-sm font-bold text-paper transition-transform duration-300 hover:scale-[1.03]"
             >
               Become a Member
-              <span className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden>
+              <span
+                className="transition-transform duration-300 group-hover:translate-x-1"
+                aria-hidden
+              >
                 →
               </span>
             </a>

@@ -1,12 +1,24 @@
 import { Reveal, SectionLabel } from "./primitives";
 
 const governance = [
-  { title: "General Assembly", body: "Members hold the ultimate authority over the cooperative's direction." },
-  { title: "Board of Directors", body: "Elected stewardship of strategy, performance and accountability." },
+  {
+    title: "General Assembly",
+    body: "Members hold the ultimate authority over the cooperative's direction.",
+  },
+  {
+    title: "Board of Directors",
+    body: "Elected stewardship of strategy, performance and accountability.",
+  },
   { title: "Supervisory Committee", body: "Independent oversight of operations and compliance." },
-  { title: "Investment Committee", body: "Disciplined review of every asset the cooperative acquires." },
+  {
+    title: "Investment Committee",
+    body: "Disciplined review of every asset the cooperative acquires.",
+  },
   { title: "Audit & Risk Committee", body: "Formal audit, controls and risk management." },
-  { title: "Technology & Innovation", body: "Oversight of the digital platform members rely on daily." },
+  {
+    title: "Technology & Innovation",
+    body: "Oversight of the digital platform members rely on daily.",
+  },
 ];
 
 const commitments = [
@@ -47,7 +59,11 @@ export function Trust() {
 
         <div className="mt-16 grid gap-6 lg:grid-cols-3">
           {commitments.map((c, i) => (
-            <Reveal key={c.heading} delay={i} className="rounded-3xl border border-border bg-card p-8 shadow-[var(--shadow-lift)]">
+            <Reveal
+              key={c.heading}
+              delay={i}
+              className="rounded-3xl border border-border bg-card p-8 shadow-[var(--shadow-lift)]"
+            >
               <h3 className="text-lg font-bold">{c.heading}</h3>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{c.body}</p>
             </Reveal>
@@ -61,7 +77,12 @@ export function Trust() {
             </Reveal>
             <ul className="mt-8">
               {governance.map((g, i) => (
-                <Reveal as="li" key={g.title} delay={i * 0.5} className="grid gap-1 py-5 sm:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] sm:gap-6">
+                <Reveal
+                  as="li"
+                  key={g.title}
+                  delay={i * 0.5}
+                  className="grid gap-1 py-5 sm:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] sm:gap-6"
+                >
                   <span className="text-sm font-bold">{g.title}</span>
                   <span className="text-sm text-muted-foreground">{g.body}</span>
                 </Reveal>
@@ -75,8 +96,8 @@ export function Trust() {
             </Reveal>
             <Reveal delay={1}>
               <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
-                A published distribution framework decides where every naira of cooperative revenue goes before
-                it is earned.
+                A published distribution framework decides where every naira of cooperative revenue
+                goes before it is earned.
               </p>
             </Reveal>
             <ul className="mt-8 space-y-6">

@@ -7,7 +7,15 @@ const columns = [
   },
   {
     title: "Programmes",
-    links: ["Coop Save", "Coop Lock", "Coop Fund", "Coop Equip", "Coop Quick", "Coop Protect", "Coop Intel"],
+    links: [
+      "Coop Save",
+      "Coop Lock",
+      "Coop Fund",
+      "Coop Equip",
+      "Coop Quick",
+      "Coop Protect",
+      "Coop Intel",
+    ],
   },
   {
     title: "Members",
@@ -22,12 +30,12 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,2fr)]">
           <div>
             <div className="flex items-center gap-3">
-              <BrandLogo className="h-9 w-auto rounded-md object-contain shadow-[0_12px_28px_rgba(0,0,0,0.08)]" />
+              <BrandLogo className="h-7 max-w-[6.5rem] rounded-md shadow-[0_12px_28px_rgba(0,0,0,0.08)]" />
               <span className="text-sm font-extrabold tracking-wide text-soil-deep">NEOCS</span>
             </div>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-soil-deep/72">
-              Nigeria Equipment Ownership Cooperative Society, a national productive asset ownership and
-              community wealth creation cooperative.
+              Nigeria Equipment Ownership Cooperative Society, a national productive asset ownership
+              and community wealth creation cooperative.
             </p>
             <address className="mt-6 space-y-1 text-sm not-italic text-soil-deep/64">
               <p>Central Business District, Abuja, FCT</p>
@@ -53,7 +61,10 @@ export function Footer() {
                 <ul className="mt-5 space-y-3">
                   {c.links.map((l) => (
                     <li key={l}>
-                      <a href="#top" className="text-sm text-soil-deep/68 transition-colors hover:text-soil-deep">
+                      <a
+                        href="#top"
+                        className="text-sm text-soil-deep/68 transition-colors hover:text-soil-deep"
+                      >
                         {l}
                       </a>
                     </li>
@@ -65,7 +76,10 @@ export function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col gap-4 pt-8 text-xs text-soil-deep/55 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Nigeria Equipment Ownership Cooperative Society. All rights reserved.</p>
+          <p>
+            © {new Date().getFullYear()} Nigeria Equipment Ownership Cooperative Society. All rights
+            reserved.
+          </p>
           <p>Promoted by Century Information System Ltd (CIS)</p>
         </div>
       </div>
