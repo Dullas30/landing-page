@@ -1,3 +1,5 @@
+import { BrandLogo } from "./BrandLogo";
+
 const columns = [
   {
     title: "Cooperative",
@@ -20,9 +22,7 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,2fr)]">
           <div>
             <div className="flex items-center gap-3">
-              <span className="grid h-9 w-9 place-items-center rounded-lg bg-gradient-to-br from-growth-bright to-growth text-sm font-black text-paper shadow-[0_12px_28px_rgba(0,0,0,0.08)]">
-                N
-              </span>
+              <BrandLogo className="h-9 w-auto rounded-md object-contain shadow-[0_12px_28px_rgba(0,0,0,0.08)]" />
               <span className="text-sm font-extrabold tracking-wide text-soil-deep">NEOCS</span>
             </div>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-soil-deep/72">
@@ -37,8 +37,8 @@ export function Footer() {
                 </a>
               </p>
               <p>
-                <a href="tel:+2348000000000" className="transition-colors hover:text-growth">
-                  +234 800 000 0000
+                <a href="tel:+2348088369114" className="transition-colors hover:text-growth">
+                  +234 808 836 9114
                 </a>
               </p>
             </address>

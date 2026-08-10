@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import { Counter } from "./primitives";
+import { BrandLogo } from "./BrandLogo";
 
 const stats = [
   { value: 500000, suffix: "+", label: "Members targeted in five years" },
@@ -124,9 +125,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 1.15 }}
             className="flex items-start gap-3 pt-1 sm:items-center"
           >
-            <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-soil text-xs font-black text-paper">
-              N
-            </span>
+            <BrandLogo className="h-9 w-auto shrink-0 rounded-md object-contain" />
             <p className="max-w-xl text-sm leading-relaxed text-foreground sm:text-base">
               This is <span className="font-bold">NEOCS</span>, the Nigeria Equipment Ownership
               Cooperative Society. Members pool capital, the cooperative buys the machinery, everyone

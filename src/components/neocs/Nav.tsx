@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
+import { BrandLogo } from "./BrandLogo";
 
 const links = [
   { label: "The Problem", href: "#problem" },
@@ -36,9 +37,7 @@ export function Nav() {
         )}
       >
         <a href="#top" className="flex min-w-0 items-center gap-3">
-          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-gradient-to-br from-growth-bright to-growth text-sm font-black text-paper">
-            N
-          </span>
+          <BrandLogo className="h-9 w-auto shrink-0 rounded-md object-contain" />
           <span className="truncate text-sm font-extrabold tracking-tight text-ink">
             NEOCS
             <span className="ml-2 hidden font-medium text-ink/50 sm:inline">Cooperative Society</span>
