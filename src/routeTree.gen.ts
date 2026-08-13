@@ -10,33 +10,52 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as MembershipRouteImport } from './routes/membership'
+import { Route as MembershipTermsRouteImport } from './routes/membership.terms'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MembershipRoute = MembershipRouteImport.update({
+  id: '/membership',
+  path: '/membership',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MembershipTermsRoute = MembershipTermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => MembershipRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/membership': typeof MembershipRouteWithChildren
+  '/membership/terms': typeof MembershipTermsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/membership': typeof MembershipRouteWithChildren
+  '/membership/terms': typeof MembershipTermsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/membership': typeof MembershipRouteWithChildren
+  '/membership/terms': typeof MembershipTermsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/membership' | '/membership/terms'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/membership' | '/membership/terms'
+  id: '__root__' | '/' | '/membership' | '/membership/terms'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  MembershipRoute: typeof MembershipRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +67,38 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/membership': {
+      id: '/membership'
+      path: '/membership'
+      fullPath: '/membership'
+      preLoaderRoute: typeof MembershipRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/membership/terms': {
+      id: '/membership/terms'
+      path: '/terms'
+      fullPath: '/membership/terms'
+      preLoaderRoute: typeof MembershipTermsRouteImport
+      parentRoute: typeof MembershipRoute
+    }
   }
 }
 
+interface MembershipRouteChildren {
+  MembershipTermsRoute: typeof MembershipTermsRoute
+}
+
+const MembershipRouteChildren: MembershipRouteChildren = {
+  MembershipTermsRoute: MembershipTermsRoute,
+}
+
+const MembershipRouteWithChildren = MembershipRoute._addFileChildren(
+  MembershipRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  MembershipRoute: MembershipRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

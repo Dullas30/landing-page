@@ -61,7 +61,7 @@ export function Nav() {
         </nav>
 
         <a
-          href="#join"
+          href="/membership"
           className="ml-auto shrink-0 rounded-full bg-soil px-5 py-2.5 text-sm font-semibold text-paper transition-transform duration-300 hover:scale-[1.03] lg:ml-6"
         >
           Become a Member

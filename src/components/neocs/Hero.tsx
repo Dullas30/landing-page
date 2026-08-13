@@ -211,7 +211,7 @@ export function Hero() {
             className="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center"
           >
             <a
-              href="#join"
+              href="/membership"
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-soil px-7 py-4 text-sm font-bold text-paper transition-transform duration-300 hover:scale-[1.03]"
             >
               Become a Member
@@ -247,14 +247,19 @@ export function Hero() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.5 }}
         style={{ opacity: fade }}
-        className="mx-auto mt-16 grid w-full max-w-7xl gap-6 px-5 pt-8 sm:mt-20 sm:grid-cols-3 sm:px-8"
+        className="mx-auto mt-16 grid w-full max-w-7xl gap-4 px-5 pt-8 sm:mt-20 sm:grid-cols-3 sm:gap-6 sm:px-8"
       >
         {stats.map((s) => (
-          <div key={s.label}>
-            <dt className="font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+          <div
+            key={s.label}
+            className="rounded-2xl border border-border/70 bg-paper/70 p-5 backdrop-blur-sm sm:p-6"
+          >
+            <dt className="font-display text-2xl font-bold leading-none tracking-tight text-ink sm:text-4xl">
               <Counter value={s.value} prefix={s.prefix} suffix={s.suffix} />
             </dt>
-            <dd className="mt-2 max-w-[16rem] text-sm text-muted-foreground">{s.label}</dd>
+            <dd className="mt-2 max-w-[14rem] text-sm leading-relaxed text-muted-foreground text-balance sm:max-w-[16rem]">
+              {s.label}
+            </dd>
           </div>
         ))}
       </motion.dl>
